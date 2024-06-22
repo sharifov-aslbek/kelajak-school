@@ -3,102 +3,185 @@
       <div class="container flex items-center justify-between">
          <div class="logo flex items-center">
             <router-link to="/">
-               <img class="w-[100px]" src="../assets/images/kelajak-schoollogo.jpg" alt="">
+               <img class="w-[70px] sm:w-[100px]" src="../assets/images/kelajak-schoollogo.jpg" alt="">
             </router-link>
          </div>
-
+ 
          <div class="menu hidden items-center w-full max-w-[600px] justify-center gap-7 dm:gap-0 dm:justify-around text-white sm:flex">
             <router-link to="/" class="hover:text-gray-200">{{ $t('navbar-link') }}</router-link>
-            <router-link to="about" class="hover:text-gray-200">Bog'lanish</router-link>
-            <router-link to="search" class="hover:text-gray-200">Imkoniyatlar</router-link>
+            <router-link to="about" class="hover:text-gray-200">{{ $t('navbar-link-2') }}</router-link>
+            <router-link to="search" class="hover:text-gray-200">{{ $t('navbar-link-3') }}</router-link>
          </div>
-
+ 
          <div class="actions hidden sm:flex items-center text-white gap-3">
             <a href="" class="hover:text-gray-200">
                <i class="fa-brands fa-telegram"></i>
             </a>
-
+ 
             <a href="" class="hover:text-gray-200">
                <i class="fa-brands fa-instagram"></i>
             </a>
-
-            <select v-model="$i18n.locale" class="outline-none bg-blue-700 hover:bg-blue-600 cursor-pointer py-1 text-white">
-               <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale" class="border-white outline-none">
-                  {{ locale }}
-               </option>
-            </select>
-
+ 
+            <div class="dropdown">
+             <button @click="toggleDropdown" class="dropdown-toggle bg-blue-700 hover:bg-blue-600 flex items-center gap-2 px-2 text-white py-1">
+                {{ currentLocale }} <i class="fa-solid fa-chevron-down text-[13px]"></i>
+             </button>
+             <ul v-if="dropdownOpen" class="dropdown-menu bg-blue-700">
+             <li 
+                v-for="locale in $i18n.availableLocales" 
+                :key="`locale-${locale}`" 
+                @click="changeLocale(locale)" 
+                class="dropdown-item cursor-pointer hover:bg-blue-600 text-white py-1"
+             >
+                {{ locale }}
+             </li>
+             </ul>
+          </div>
+ 
          </div>
-
-         <div class="burger block sm:hidden text-white text-[25px] cursor-pointer" @click="toggleMenu">
+ 
+         <div class="burger block sm:hidden text-white text-[25px] cursor-pointer" @click="isMenuOpen = true">
             <i class="fa-solid fa-bars-staggered"></i>
          </div>
-         <transition name="fade">
-            <div v-if="isMenuOpen" class="bg-black/60 for-bg w-full max-w-full h-screen fixed top-0 left-0">
+          <Transition>
+          <div v-if="isMenuOpen" class="bg-black/60 for-bg w-full max-w-full h-screen fixed top-0 left-0">
           <div
             class="mobile-menu bg-white w-[80%] fixed left-0 top-0 flex flex-col items-start h-screen justify-start p-4">
             <div class="logo flex justify-between items-center w-full">
               <img src="../assets/images/logo-2.jpg" class=" w-[60px] sm:w-[100px] rounded-full" alt="Logo">
               <i @click="toggleMenu" class="fa-solid fa-xmark text-2xl text-grey-500 cursor-pointer"></i>
             </div>
+ 
+            <div class="dropdown">
+             <button @click="toggleDropdownMenu" class="dropdown-toggle bg-blue-700 hover:bg-blue-600 flex mt-10 text-[13px] md:text-[16px] items-center gap-2 px-2 text-white py-1">
+                {{ currentLocale }} <i class="fa-solid fa-chevron-down text-[13px]"></i>
+             </button>
+             <ul v-if="dropMenu" class="dropdown-menu bg-blue-700">
+             <li 
+                v-for="locale in $i18n.availableLocales" 
+                :key="`locale-${locale}`" 
+                @click="changeLocaleMenu(locale)" 
+                class="dropdown-item cursor-pointer hover:bg-blue-600 text-white py-1"
+             >
+                {{ locale }}
+             </li>
+             </ul>
+          </div>
+ 
             <ul class="menu-mini flex flex-col justify-start items-start gap-6 pt-10">
-               <router-link to="/" class="hover:text-gray-500">{{ $t('navbar-link') }}</router-link>
-               <router-link to="" class="hover:text-gray-500">Bog'lanish</router-link>
-               <router-link to="" class="hover:text-gray-500">Imkoniyatlar</router-link>
+               <router-link to="/" class="text-blue-700 hover:font-bold">{{ $t('navbar-link') }}</router-link>
+               <router-link to="" class="text-blue-700 hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
+               <router-link to="" class="text-blue-700 hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
             </ul>
+
+            <div class='socials flex gap-4 mt-10'> 
+               <a href="" class="text-blue-700 hover:text-blue-500">
+               <i class="fa-brands fa-telegram"></i>
+               </a>
+ 
+            <a href="" class="text-blue-700 hover:text-blue-500">
+               <i class="fa-brands fa-instagram"></i>
+            </a>
+            </div>
             <div class="number flex flex-col items-start mt-5 pt-8 gap-3">
-               <i class="fa-solid fa-phone"></i>
-              <h3 class="font-medium text-black text-[16px]">+998 91 463 33 22</h3>
-              <h3 class="font-medium text-black text-[16px]">+998 93 363 33 22</h3>
+               <i class="fa-solid fa-phone text-blue-700"></i>
+              <h3 class="font-medium text-blue-700 font-bold text-[16px]">+998 91 463 33 22</h3>
+              <h3 class="font-medium  text-blue-700 font-bold text-[16px]">+998 93 363 33 22</h3>
             </div>
           </div>
         </div>
         
-         </transition>
+       </Transition>
       </div>
    </header>
-</template>
-
-<script>
-export default {
+ </template>
+ 
+ <script>
+ export default {
    data() {
       return {
          isMenuOpen: false,
+         dropdownOpen: false,
+         dropMenu: false,
       }
+   },
+   computed: {
+     currentLocale() {
+       return this.$i18n.locale;
+     }
    },
    methods: {
       toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
     },
-   //  checkWindowWidth() {
-   //    window.addEventListener("resize", () => {
-   //      let windowWidth = window.innerWidth
-   //      if (windowWidth > 1023) {
-   //        this.isMenuOpen = false
-   //      }
-   //    })
-   //  }
+    toggleDropdown() {
+       this.dropdownOpen = !this.dropdownOpen;
+    },
+    toggleDropdownMenu() {
+       this.dropMenu = !this.dropMenu;
+    },
+     changeLocale(locale) {
+       this.$i18n.locale = locale;
+       this.dropdownOpen = false;  // Close the dropdown after selecting an option
+     },
+     changeLocaleMenu(locale) {
+       this.$i18n.locale = locale
+       this.dropMenu = false
+     },
+    checkWindowWidth() {
+      window.addEventListener("resize", () => {
+        let windowWidth = window.innerWidth
+        if (windowWidth > 640) {
+          this.isMenuOpen = false
+        }
+      })
+    }
    },
-   // mounted() {
-   //    this.checkWindowWidth()
-   // },
-}
-</script>
-
-<style scoped>
-.head .container .menu a.router-link-exact-active {
+   mounted() {
+      this.checkWindowWidth()
+   },
+ }
+ </script>
+ 
+ <style scoped>
+ .head .container .menu a.router-link-exact-active {
    color: rgb(209, 213, 219); 
-}
-
-/* Transition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-</style>
+ }
+ /* we will explain what these classes do next! */
+ .v-enter-active,
+ .v-leave-active {
+   transition: opacity 0.5s ease;
+ }
+ 
+ .v-enter-from,
+ .v-leave-to {
+   opacity: 0;
+ }
+ 
+ .dropdown {
+   position: relative;
+   display: inline-block;
+ }
+ 
+ .dropdown-toggle {
+   cursor: pointer;
+   outline: none;
+   border: none;
+ }
+ 
+ .dropdown-menu {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   z-index: 10;
+   display: block;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+ }
+ 
+ .dropdown-item {
+   padding: 0.25rem 1rem;
+ }
+ 
+ </style>
