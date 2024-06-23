@@ -5,7 +5,7 @@
             <div class="text-content text-white">
             <h3>Kelajak School</h3>
             <p class="w-full max-w-[370px] my-3">{{ $t('footer-subtitle') }}</p>
-            <p class="w-full max-w-[350px] my-3">Eng maqbul sarmoya bu farzand kelajagiga sarflangan sarmoyadir</p>
+            <p class="w-full max-w-[350px] my-3">{{ $t('footer-subtitle-2') }}</p>
 
             <div class="socials flex gap-3">
                <a href="" class="hover:text-gray-200">
