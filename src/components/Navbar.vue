@@ -1,5 +1,5 @@
 <template>
-   <header class="head bg-blue-700 py-3">
+   <header class="head bg-brand-blue py-3 relative z-20">
       <div class="container flex items-center justify-between">
          <div class="logo flex items-center">
             <router-link to="/">
@@ -7,13 +7,13 @@
             </router-link>
          </div>
  
-         <div class="menu hidden items-center w-full max-w-[600px] justify-center gap-7 dm:gap-0 dm:justify-around text-gray-200 sm:flex">
-            <router-link to="about" class="hover:text-gray-300">{{ $t('navbar-link') }}</router-link>
-            <router-link to="/" class="hover:text-gray-300">{{ $t('navbar-link-2') }}</router-link>
-            <router-link to="search" class="hover:text-gray-300">{{ $t('navbar-link-3') }}</router-link>
+         <div class="menu hidden items-center w-full max-w-[600px] justify-center gap-7 dm:gap-0 dm:justify-around text-gray-200 m:flex">
+            <router-link to="about" class="hover:font-bold">{{ $t('navbar-link') }}</router-link>
+            <router-link to="/" class="hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
+            <router-link to="search" class="hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
          </div>
  
-         <div class="actions hidden sm:flex items-center text-white gap-3">
+         <div class="actions hidden m:flex items-center text-white gap-3">
             <a href="" class="hover:text-gray-200">
                <i class="fa-brands fa-telegram"></i>
             </a>
@@ -23,15 +23,15 @@
             </a>
  
             <div class="dropdown">
-             <button @click="toggleDropdown" class="dropdown-toggle bg-blue-800 hover:bg-blue-600 flex items-center gap-2 px-2 text-white py-1">
+             <button @click="toggleDropdown" class="dropdown-toggle bg-blue-900 hover:bg-blue-700 flex items-center gap-2 px-2 text-white py-1">
                 {{ currentLocale }} <i class="fa-solid fa-chevron-down text-[13px]"></i>
              </button>
-             <ul v-if="dropdownOpen" class="dropdown-menu bg-blue-700">
+             <ul v-if="dropdownOpen" class="dropdown-menu bg-brand-blue">
              <li 
                 v-for="locale in $i18n.availableLocales" 
                 :key="`locale-${locale}`" 
                 @click="changeLocale(locale)" 
-                class="dropdown-item cursor-pointer hover:bg-blue-600 text-white py-1"
+                class="dropdown-item cursor-pointer hover:bg-blue-800 text-white py-1"
              >
                 {{ locale }}
              </li>
@@ -40,7 +40,7 @@
  
          </div>
  
-         <div class="burger block sm:hidden text-white text-[25px] cursor-pointer" @click="isMenuOpen = true">
+         <div class="burger block m:hidden text-white text-[25px] cursor-pointer" @click="isMenuOpen = true">
             <i class="fa-solid fa-bars-staggered"></i>
          </div>
           <Transition>
@@ -49,19 +49,19 @@
             class="mobile-menu bg-white w-[80%] fixed left-0 top-0 flex flex-col items-start h-screen justify-start p-4">
             <div class="logo flex justify-between items-center w-full">
               <img src="../assets/images/logo-2.jpg" class=" w-[60px] sm:w-[100px] rounded-full" alt="Logo">
-              <i @click="toggleMenu" class="fa-solid fa-xmark text-2xl text-grey-500 cursor-pointer text-blue-700 hover:text-blue-500"></i>
+              <i @click="toggleMenu" class="fa-solid fa-xmark text-2xl text-grey-500 cursor-pointer text-brand-blue hover:text-blue-700"></i>
             </div>
  
             <div class="dropdown">
-             <button @click="toggleDropdownMenu" class="dropdown-toggle bg-blue-700 hover:bg-blue-600 flex mt-10 text-[13px] md:text-[16px] items-center gap-2 px-2 text-white py-1">
+             <button @click="toggleDropdownMenu" class="dropdown-toggle bg-blue-900 hover:bg-blue-700 flex mt-10 text-[13px] md:text-[16px] items-center gap-2 px-2 text-white py-1">
                 {{ currentLocale }} <i class="fa-solid fa-chevron-down text-[13px]"></i>
              </button>
-             <ul v-if="dropMenu" class="dropdown-menu bg-blue-700">
+             <ul v-if="dropMenu" class="dropdown-menu bg-blue-900">
              <li 
                 v-for="locale in $i18n.availableLocales" 
                 :key="`locale-${locale}`" 
                 @click="changeLocaleMenu(locale)" 
-                class="dropdown-item cursor-pointer hover:bg-blue-600 text-white py-1"
+                class="dropdown-item cursor-pointer hover:bg-blue-700 text-white py-1"
              >
                 {{ locale }}
              </li>
@@ -69,24 +69,24 @@
           </div>
  
             <ul class="menu-mini flex flex-col justify-start items-start gap-6 pt-10">
-               <router-link to="/" class="text-blue-700 hover:font-bold">{{ $t('navbar-link') }}</router-link>
-               <router-link to="" class="text-blue-700 hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
-               <router-link to="" class="text-blue-700 hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
+               <router-link to="/" class="text-blue-800 hover:font-bold">{{ $t('navbar-link') }}</router-link>
+               <router-link to="" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
+               <router-link to="" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
             </ul>
 
             <div class='socials flex gap-4 mt-10'> 
-               <a href="" class="text-blue-700 hover:text-blue-500">
+               <a href="" class="text-brand-blue hover:text-blue-500">
                <i class="fa-brands fa-telegram"></i>
                </a>
  
-            <a href="" class="text-blue-700 hover:text-blue-500">
+            <a href="" class="text-brand-blue hover:text-blue-500">
                <i class="fa-brands fa-instagram"></i>
             </a>
             </div>
             <div class="number flex flex-col items-start mt-5 pt-8 gap-3">
-               <i class="fa-solid fa-phone text-blue-700"></i>
-              <h3 class="font-medium text-blue-700 hover:font-bold text-[16px]">+998 91 463 33 22</h3>
-              <h3 class="font-medium  text-blue-700 hover:font-bold text-[16px]">+998 93 363 33 22</h3>
+               <i class="fa-solid fa-phone text-brand-blue"></i>
+              <h3 class="font-medium text-blue-800 hover:font-bold text-[16px]">+998 91 463 33 22</h3>
+              <h3 class="font-medium  text-blue-800 hover:font-bold text-[16px]">+998 93 363 33 22</h3>
             </div>
           </div>
         </div>

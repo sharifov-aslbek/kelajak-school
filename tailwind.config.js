@@ -10,10 +10,13 @@ export default {
     extend: {
       screens: {
         'dm': '915px',
+        'm': '650px',
+        's': '480px',
+        "xs": '350px',
         ...defaultTheme.screens,
       },
       colors: {
-        'brand-blue': '#1E3A8A'
+        'brand-blue': '#213653'
       }
     },
   },
