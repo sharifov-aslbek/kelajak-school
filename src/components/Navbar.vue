@@ -1,5 +1,5 @@
 <template>
-   <header class="head bg-blue-800 py-3">
+   <header class="head bg-blue-700 py-3">
       <div class="container flex items-center justify-between">
          <div class="logo flex items-center">
             <router-link to="/">
@@ -7,10 +7,10 @@
             </router-link>
          </div>
  
-         <div class="menu hidden items-center w-full max-w-[600px] justify-center gap-7 dm:gap-0 dm:justify-around text-white sm:flex">
-            <router-link to="/" class="hover:text-gray-200">{{ $t('navbar-link') }}</router-link>
-            <router-link to="about" class="hover:text-gray-200">{{ $t('navbar-link-2') }}</router-link>
-            <router-link to="search" class="hover:text-gray-200">{{ $t('navbar-link-3') }}</router-link>
+         <div class="menu hidden items-center w-full max-w-[600px] justify-center gap-7 dm:gap-0 dm:justify-around text-gray-200 sm:flex">
+            <router-link to="about" class="hover:text-gray-300">{{ $t('navbar-link') }}</router-link>
+            <router-link to="/" class="hover:text-gray-300">{{ $t('navbar-link-2') }}</router-link>
+            <router-link to="search" class="hover:text-gray-300">{{ $t('navbar-link-3') }}</router-link>
          </div>
  
          <div class="actions hidden sm:flex items-center text-white gap-3">
@@ -23,7 +23,7 @@
             </a>
  
             <div class="dropdown">
-             <button @click="toggleDropdown" class="dropdown-toggle bg-blue-700 hover:bg-blue-600 flex items-center gap-2 px-2 text-white py-1">
+             <button @click="toggleDropdown" class="dropdown-toggle bg-blue-800 hover:bg-blue-600 flex items-center gap-2 px-2 text-white py-1">
                 {{ currentLocale }} <i class="fa-solid fa-chevron-down text-[13px]"></i>
              </button>
              <ul v-if="dropdownOpen" class="dropdown-menu bg-blue-700">
@@ -49,7 +49,7 @@
             class="mobile-menu bg-white w-[80%] fixed left-0 top-0 flex flex-col items-start h-screen justify-start p-4">
             <div class="logo flex justify-between items-center w-full">
               <img src="../assets/images/logo-2.jpg" class=" w-[60px] sm:w-[100px] rounded-full" alt="Logo">
-              <i @click="toggleMenu" class="fa-solid fa-xmark text-2xl text-grey-500 cursor-pointer"></i>
+              <i @click="toggleMenu" class="fa-solid fa-xmark text-2xl text-grey-500 cursor-pointer text-blue-700 hover:text-blue-500"></i>
             </div>
  
             <div class="dropdown">
@@ -85,8 +85,8 @@
             </div>
             <div class="number flex flex-col items-start mt-5 pt-8 gap-3">
                <i class="fa-solid fa-phone text-blue-700"></i>
-              <h3 class="font-medium text-blue-700 font-bold text-[16px]">+998 91 463 33 22</h3>
-              <h3 class="font-medium  text-blue-700 font-bold text-[16px]">+998 93 363 33 22</h3>
+              <h3 class="font-medium text-blue-700 hover:font-bold text-[16px]">+998 91 463 33 22</h3>
+              <h3 class="font-medium  text-blue-700 hover:font-bold text-[16px]">+998 93 363 33 22</h3>
             </div>
           </div>
         </div>
@@ -145,7 +145,8 @@
  
  <style scoped>
  .head .container .menu a.router-link-exact-active {
-   color: rgb(209, 213, 219); 
+   color: #fff; 
+   font-weight: 600;
  }
  /* we will explain what these classes do next! */
  .v-enter-active,

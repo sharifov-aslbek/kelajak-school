@@ -11,6 +11,9 @@ export default {
       screens: {
         'dm': '915px',
         ...defaultTheme.screens,
+      },
+      colors: {
+        'brand-blue': '#1E3A8A'
       }
     },
   },
