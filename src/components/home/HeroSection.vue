@@ -1,34 +1,32 @@
 <template>
    <section class="hero mb-[600px] lg:mb-[600px]">
-     <!-- <TheHeader /> -->
-     <TheHeader class="relative z-10" />
      <div class="hero-swiper swiper-container">
        <div class="swiper-wrapper">
          <!-- slide -->
          <div class="swiper-slide">
            <div class="text-content text-white text-center">
              <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
-               Kelajak School Xususiy Maktabi
+               {{ $t('title-home') }}
              </h3>
-             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">Farzandingiz kelajakini biz bilan quring</h1>
+             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
            </div>
          </div>
          <!-- slide -->
          <div class="swiper-slide">
            <div class="text-content text-white text-center">
             <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
-               Kelajak School Xususiy Maktabi
+              {{ $t('title-home') }}
              </h3>
-             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">Farzandingiz kelajakini biz bilan quring</h1>
+             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
            </div>
          </div>
          <!-- slide -->
          <div class="swiper-slide">
            <div class="text-content text-white text-center">
             <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
-               Kelajak School Xususiy Maktabi
+              {{ $t('title-home') }}
              </h3>
-             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">Farzandingiz kelajakini biz bilan quring</h1>
+             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
            </div>
          </div>
        </div>
@@ -61,7 +59,7 @@
  
  <style scoped>
  .hero {
-   position: relative;
+   position: static;
  }
  
  .hero .swiper-container {

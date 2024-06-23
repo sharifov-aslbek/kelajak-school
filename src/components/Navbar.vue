@@ -1,5 +1,5 @@
 <template>
-   <header class="head bg-brand-blue py-3 relative z-20">
+   <header class="head relative bg-brand-blue py-3 z-20">
       <div class="container flex items-center justify-between">
          <div class="logo flex items-center">
             <router-link to="/">
