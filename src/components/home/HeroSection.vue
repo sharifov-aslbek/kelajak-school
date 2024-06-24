@@ -1,5 +1,5 @@
 <template>
-   <section class="hero mb-[700px] lg:mb-[600px]">
+   <section class="hero">
      <div class="hero-swiper swiper-container">
        <div class="swiper-wrapper">
          <!-- slide -->
@@ -64,13 +64,12 @@
  </script>
  
  <style scoped>
-
  
  .hero .swiper-container {
    overflow-x: hidden;
    display: flex;
    align-items: center;
-   position: absolute;
+   /* position: absolute; */
    top: 0;
    left: 0;
    /* z-index: -2 !important; */
