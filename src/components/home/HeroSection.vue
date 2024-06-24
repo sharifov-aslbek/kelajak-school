@@ -1,5 +1,5 @@
 <template>
-   <section class="hero mb-[600px] lg:mb-[600px]">
+   <section class="hero mb-[700px] lg:mb-[600px]">
      <div class="hero-swiper swiper-container">
        <div class="swiper-wrapper">
          <!-- slide -->
@@ -64,9 +64,7 @@
  </script>
  
  <style scoped>
- .hero {
-   position: static;
- }
+
  
  .hero .swiper-container {
    overflow-x: hidden;
