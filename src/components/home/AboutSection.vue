@@ -6,7 +6,7 @@
          </div>
 
          <div class="text-content">
-            <h2 class="text-blue-500 font-bold">{{ $t('our') }}</h2>
+            <h2 class="our text-blue-500  font-bold">{{ $t('our') }}</h2>
             <h2 class="w-full max-w-[400px] text-[18px] xs:text-[22px] my-5"><span class="text-brand-blue font-bold text-[23px] xs:text-[27px]">Kelajak School</span>da farzandingiz o'qishi uchun barcha sharoitlar mavjud</h2>
             <p class="text-[#4e6fa0] font-semibold my-5">Darslar kuchli tajribali ustozlar tomonidan olib boriladi</p>
             <div class="batafsil flex items-center gap-2">
@@ -34,13 +34,13 @@ export default {
 
 @keyframes dropShadowAnimation {
             0% {
-                filter: drop-shadow(-40px -15px 7px #4e6fa0);
+                filter: drop-shadow(-20px -15px 7px #4e6fa0);
             }
             25% {
-                filter: drop-shadow(-40px -15px 7px #89abff);
+                filter: drop-shadow(-20px -15px 7px #89abff);
             }
             100% {
-                filter: drop-shadow(-40px -15px 7px #4e6fa0);
+                filter: drop-shadow(-20px -15px 7px #4e6fa0);
             }
 }
 
