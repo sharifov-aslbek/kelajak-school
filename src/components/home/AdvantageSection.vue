@@ -6,7 +6,7 @@
             <p class="w-full max-w-[400px] text-[#4e6fa0] my-6">{{ $t('afzallik-text') }}</p>
             <p class="w-full max-w-[460px] text-[#4e6fa0]">{{ $t('lesson-text') }}</p>
          </div>
-
+         
          <div class="img-content order-1 lg:order-2">
             <img class="w-full max-w-[350px] lg:w-[400px]" src="@/assets/images/slide-img2.jpg" alt="">
          </div>
