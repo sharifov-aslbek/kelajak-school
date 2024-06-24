@@ -14,11 +14,11 @@
          </div>
  
          <div class="actions hidden m:flex items-center text-white gap-3">
-            <a href="" class="hover:text-gray-200">
+            <a href="https://t.me/Kelajak_school_qarshi" class="hover:text-gray-200">
                <i class="fa-brands fa-telegram"></i>
             </a>
  
-            <a href="" class="hover:text-gray-200">
+            <a href="https://www.instagram.com/kelajak.school/" class="hover:text-gray-200">
                <i class="fa-brands fa-instagram"></i>
             </a>
  

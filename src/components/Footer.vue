@@ -25,22 +25,22 @@
          </div>
 
          <div class="phone flex flex-col gap-2 sm:gap-5">
-            <h3>Aloqa uchun raqamlar:</h3>
+            <h3>{{ $t('footer-aloqa') }}:</h3>
             <h4>+998 91 463 33 22</h4>
             <h4>+998 93 363 33 22</h4>
          </div>
 
          <div class="location flex flex-col gap-2 sm:gap-5">
-            <h3>Bizning manzilimiz:</h3>
+            <h3>{{ $t('footer-location-text') }}:</h3>
             <h4>Qarshi Shahar, Mustaqillik ko'chasi 5-uy</h4>
 
-            <h3>Mo'ljal:</h3>
-            <h4>Nasaf Markaziy Stadioni yonida</h4>
+            <h3>{{ $t('footer-moljal') }}:</h3>
+            <h4>{{ $t('footer-moljal-text') }}</h4>
          </div>
          </div>
          
          <div class="line border w-full max-w-full my-4 mx-auto border-gray-500"></div>
-         <div class="developed mx:text-center text-white">Kelajak School || 2023-2024</div>
+         <div class="developed mx:text-center text-white">Kelajak School || 2024-2025</div>
       </div>
    </footer>
 </template>
