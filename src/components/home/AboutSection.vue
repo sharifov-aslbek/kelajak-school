@@ -45,10 +45,4 @@ export default {
 }
 
 
-
-@media (max-width:560px) {
-   .about .container .img-content img {
-   filter: drop-shadow(-20px -10px 7px #4e6fa0);
-}  
-}
 </style>

@@ -8,11 +8,11 @@
             <p class="w-full max-w-[350px] my-3">{{ $t('footer-subtitle-2') }}</p>
 
             <div class="socials flex gap-3">
-               <a href="" class="hover:text-gray-200">
+               <a href="https://t.me/Kelajak_school_qarshi" class="hover:text-gray-200">
                <i class="fa-brands fa-telegram"></i>
             </a>
  
-            <a href="" class="hover:text-gray-200">
+            <a href="https://www.instagram.com/kelajak.school/" class="hover:text-gray-200">
                <i class="fa-brands fa-instagram"></i>
             </a>
             </div>
