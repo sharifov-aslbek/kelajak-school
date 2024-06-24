@@ -75,11 +75,11 @@
             </ul>
 
             <div class='socials flex gap-4 mt-10'> 
-               <a href="" class="text-brand-blue hover:text-blue-500">
+               <a href="https://t.me/Kelajak_school_qarshi" class="text-brand-blue hover:text-blue-500">
                <i class="fa-brands fa-telegram"></i>
                </a>
  
-            <a href="" class="text-brand-blue hover:text-blue-500">
+            <a href="https://www.instagram.com/kelajak.school/" class="text-brand-blue hover:text-blue-500">
                <i class="fa-brands fa-instagram"></i>
             </a>
             </div>
