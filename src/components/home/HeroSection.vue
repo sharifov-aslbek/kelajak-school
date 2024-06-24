@@ -10,7 +10,7 @@
              </h3>
              <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
              <router-link to="" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
-             <p class="text-[12px] w-[200px] mx-auto xs:w-auto mt-5"> {{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
+             <p class="sovet text-[12px] w-[200px] mx-auto xs:w-auto mt-5"> {{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
            </div>
          </div>
          <!-- slide -->
@@ -21,7 +21,7 @@
              </h3>
              <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
              <router-link to="" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
-             <p class="text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
+             <p class="sovet text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
            </div>
          </div>
          <!-- slide -->
@@ -32,7 +32,7 @@
              </h3>
              <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
              <router-link to="" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
-             <p class="text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
+             <p class="sovet text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
            </div>
          </div>
        </div>
@@ -86,7 +86,8 @@
    align-items: center;
    justify-content: center;
  }
- 
+
+
  .swiper-wrapper .swiper-slide:first-child {
    height: 100vh;
    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -104,4 +105,5 @@
    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
      url('@/assets/images/school3.jfif') no-repeat center / cover;
  }
+
  </style>
