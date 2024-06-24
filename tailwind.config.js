@@ -12,6 +12,7 @@ export default {
         'dm': '915px',
         "mx": '816px',
         'm': '650px',
+        "mr": '660px',
         's': '480px',
         "xs": '350px',
         ...defaultTheme.screens,

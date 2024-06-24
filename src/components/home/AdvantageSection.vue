@@ -1,5 +1,5 @@
 <template>
-   <section class="advantage px-5">
+   <section class="advantage px-8 lg:px-0">
       <div class="container flex flex-col items-center gap-6 lg:gap-0 lg:flex-row justify-around">
          <div class="text-content  w-full max-w-[450px] order-2 lg:order-1">
             <h2 class="text-brand-blue font-bold text-[30px]">{{ $t('afzallik') }}:</h2>

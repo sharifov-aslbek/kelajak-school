@@ -3,17 +3,17 @@
       <div class="container flex items-center justify-between">
          <div class="logo flex items-center">
             <router-link to="/">
-               <img class="w-[70px] sm:w-[100px]" src="../assets/images/kelajak-schoollogo.jpg" alt="">
+               <img class="w-[70px] s  w-[100px]" src="../assets/images/kelajak-schoollogo.jpg" alt="">
             </router-link>
          </div>
  
-         <div class="menu hidden items-center w-full max-w-[600px] justify-center gap-7 dm:gap-0 dm:justify-around text-gray-200 m:flex">
+         <div class="menu hidden items-center w-full max-w-[600px] justify-center gap-7 dm:gap-0 dm:justify-around text-gray-200 mr:flex">
             <router-link to="about" class="hover:font-bold">{{ $t('navbar-link') }}</router-link>
             <router-link to="/" class="hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
             <router-link to="search" class="hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
          </div>
  
-         <div class="actions hidden m:flex items-center text-white gap-3">
+         <div class="actions hidden mr:flex items-center text-white gap-3">
             <a href="https://t.me/Kelajak_school_qarshi" class="hover:text-gray-200">
                <i class="fa-brands fa-telegram"></i>
             </a>
@@ -40,7 +40,7 @@
  
          </div>
  
-         <div class="burger block m:hidden text-white text-[25px] cursor-pointer" @click="isMenuOpen = true">
+         <div class="burger block mr:hidden text-white text-[25px] cursor-pointer" @click="isMenuOpen = true">
             <i class="fa-solid fa-bars-staggered"></i>
          </div>
           <Transition>
