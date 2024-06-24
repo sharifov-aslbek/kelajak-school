@@ -31,13 +31,13 @@ export default {
 
 @keyframes dropShadowAnimation {
             0% {
-                filter: drop-shadow(20px -15px 7px #4e6fa0);
+                filter: drop-shadow(18px -15px 7px #4e6fa0);
             }
             25% {
-                filter: drop-shadow(20px -15px 7px #89abff);
+                filter: drop-shadow(18px -15px 7px #89abff);
             }
             100% {
-                filter: drop-shadow(20px -15px 7px #4e6fa0);
+                filter: drop-shadow(18px -15px 7px #4e6fa0);
             }
 }
 
