@@ -1,5 +1,5 @@
 <template>
-   <section class="about my-10 py-16 px-5 lg:px-0">
+   <section class="about my-10 py-32 lg:py-16 px-5 lg:px-0">
       <div class="container flex flex-col gap-10 lg:gap-0 lg:flex-row justify-around items-center">
          <div class="img-content">
             <img class="w-full max-w-[350px] lg:w-[400px]" src="@/assets/images/slide-img1.jpg" alt="#">
