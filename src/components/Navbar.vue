@@ -3,13 +3,13 @@
       <div class="container flex items-center justify-between">
          <div class="logo flex items-center">
             <router-link to="/">
-               <img class="w-[70px] s  w-[100px]" src="../assets/images/kelajak-schoollogo.jpg" alt="">
+               <img class="w-[70px] s:w-[100px]" src="../assets/images/kelajak-schoollogo.jpg" alt="">
             </router-link>
          </div>
  
          <div class="menu hidden items-center w-full max-w-[600px] justify-center gap-7 dm:gap-0 dm:justify-around text-gray-200 mr:flex">
-            <router-link to="about" class="hover:font-bold">{{ $t('navbar-link') }}</router-link>
-            <router-link to="/" class="hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
+            <router-link to="qulaylik" class="hover:font-bold">{{ $t('navbar-link') }}</router-link>
+            <router-link to="connection" class="hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
             <router-link to="search" class="hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
          </div>
  
@@ -69,17 +69,17 @@
           </div>
  
             <ul class="menu-mini flex flex-col justify-start items-start gap-6 pt-10">
-               <router-link to="/" class="text-blue-800 hover:font-bold">{{ $t('navbar-link') }}</router-link>
-               <router-link to="" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
+               <router-link to="qulaylik" class="text-blue-800 hover:font-bold">{{ $t('navbar-link') }}</router-link>
+               <router-link to="connection" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
                <router-link to="" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
             </ul>
 
             <div class='socials flex gap-4 mt-10'> 
-               <a href="https://t.me/Kelajak_school_qarshi" class="text-brand-blue hover:text-blue-500">
+               <a href="https://t.me/Kelajak_school_qarshi" class="text-brand-blue text-[18px] xs:text-[25px] hover:text-blue-500">
                <i class="fa-brands fa-telegram"></i>
                </a>
  
-            <a href="https://www.instagram.com/kelajak.school/" class="text-brand-blue hover:text-blue-500">
+            <a href="https://www.instagram.com/kelajak.school/" class="text-brand-blue text-[18px] xs:text-[25px] hover:text-blue-500">
                <i class="fa-brands fa-instagram"></i>
             </a>
             </div>

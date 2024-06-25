@@ -9,12 +9,14 @@ export default {
   theme: {
     extend: {
       screens: {
+        'xr': '930px',
         'dm': '915px',
         "mx": '816px',
-        'm': '650px',
-        "mr": '660px',
+        'm': '656px',
+        "mr": '740px',
         's': '480px',
         "xs": '350px',
+        "xsmax": '380px',
         ...defaultTheme.screens,
       },
       colors: {

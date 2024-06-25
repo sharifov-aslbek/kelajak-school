@@ -19,8 +19,8 @@
          </div>
 
          <div class="quick-links flex flex-col gap-5">
-            <router-link to="" class="hover:font-bold">{{ $t('navbar-link') }}</router-link>
-            <router-link to="" class="hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
+            <router-link to="qulaylik" class="hover:font-bold">{{ $t('navbar-link') }}</router-link>
+            <router-link to="connection" class="hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
             <router-link to="" class="hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
          </div>
 
