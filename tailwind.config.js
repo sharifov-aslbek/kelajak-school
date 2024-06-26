@@ -11,8 +11,10 @@ export default {
       screens: {
         'xr': '930px',
         'dm': '915px',
+        "xc": "870px",
         "mx": '816px',
         'm': '656px',
+        "mm": "565px",
         "mr": '740px',
         's': '480px',
         "xs": '350px',

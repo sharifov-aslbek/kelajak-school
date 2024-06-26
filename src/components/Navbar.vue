@@ -7,13 +7,14 @@
             </router-link>
          </div>
  
-         <div class="menu hidden items-center w-full max-w-[600px] justify-center gap-7 dm:gap-0 dm:justify-around text-gray-200 mr:flex">
+         <div class="menu hidden items-center w-full max-w-[800px] justify-center gap-7 xc:gap-0 xc:justify-around text-gray-200 xc:flex">
             <router-link to="qulaylik" class="hover:font-bold">{{ $t('navbar-link') }}</router-link>
             <router-link to="connection" class="hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
             <router-link to="search" class="hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
+            <router-link to="support" class="hover:font-bold">{{ $t('link-hero') }}</router-link>
          </div>
  
-         <div class="actions hidden mr:flex items-center text-white gap-3">
+         <div class="actions hidden xc:flex items-center text-white gap-3">
             <a href="https://t.me/Kelajak_school_qarshi" class="hover:text-gray-200">
                <i class="fa-brands fa-telegram"></i>
             </a>
@@ -40,7 +41,7 @@
  
          </div>
  
-         <div class="burger block mr:hidden text-white text-[25px] cursor-pointer" @click="isMenuOpen = true">
+         <div class="burger block xc:hidden text-white text-[25px] cursor-pointer" @click="isMenuOpen = true">
             <i class="fa-solid fa-bars-staggered"></i>
          </div>
           <Transition>
@@ -72,6 +73,7 @@
                <router-link to="qulaylik" class="text-blue-800 hover:font-bold">{{ $t('navbar-link') }}</router-link>
                <router-link to="connection" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
                <router-link to="" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
+               <router-link to="support" class="text-blue-800 hover:font-bold">{{ $t('link-hero') }}</router-link>
             </ul>
 
             <div class='socials flex gap-4 mt-10'> 
@@ -185,4 +187,9 @@
    padding: 0.25rem 1rem;
  }
  
+ @media (max-width:1020px) {
+   .head .container .menu a {
+      font-size: 14px;
+   }
+ }
  </style>

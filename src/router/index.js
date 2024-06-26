@@ -13,11 +13,17 @@ const router = createRouter({
       path: '/qulaylik',
       name: 'qulaylikar',
       component: () => import('../views/Opporunitues.vue')
-    },{
+    },
+    {
       path: '/connection',
       name: 'aloqa',
       component: () => import('../views/ConnectionView.vue')
-    }
+    },
+    {
+      path: '/support',
+      name: 'form',
+      component: () => import('../views/AcceptanceView.vue')
+    },
   ]
 })
 
