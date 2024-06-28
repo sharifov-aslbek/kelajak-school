@@ -27,7 +27,7 @@
         </div>
 
            <h3 class="text-[14px] s:text-[22px] text-brand-blue font-bold">{{ $t('connect-qabul') }}</h3>
-           <router-link class="text-blue-500" to="">{{ $t('link-hero') }}</router-link>
+           <router-link class="text-blue-500" to="support">{{ $t('link-hero') }}</router-link>
          <p class="text-[13px]"><i class="fa-solid fa-arrow-up"></i> {{ $t('sovet-hero') }}</p>
       <p class="text-brand-blue font-bold w-full max-w-[600px] text-[14px] s:text-[22px] dm:max-w-full">{{ $t('footer-subtitle') }}</p>
       </div>

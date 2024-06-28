@@ -10,7 +10,7 @@
          <div class="menu hidden items-center w-full max-w-[800px] justify-center gap-7 xc:gap-0 xc:justify-around text-gray-200 xc:flex">
             <router-link to="qulaylik" class="hover:font-bold">{{ $t('navbar-link') }}</router-link>
             <router-link to="connection" class="hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
-            <router-link to="search" class="hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
+            <router-link to="" class="hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
             <router-link to="support" class="hover:font-bold">{{ $t('link-hero') }}</router-link>
          </div>
  

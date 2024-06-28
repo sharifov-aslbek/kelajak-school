@@ -6,10 +6,10 @@
          <div class="swiper-slide">
            <div class="text-content text-white text-center">
              <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
-               {{ $t('title-home') }}
+               {{ text }}
              </h3>
              <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
-             <router-link to="" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
+             <router-link to="support" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
              <p class="sovet text-[12px] w-[200px] mx-auto xs:w-auto mt-5"> {{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
            </div>
          </div>
@@ -17,10 +17,10 @@
          <div class="swiper-slide">
            <div class="text-content text-white text-center">
             <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
-              {{ $t('title-home') }}
+              {{ text }}
              </h3>
              <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
-             <router-link to="" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
+             <router-link to="support" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
              <p class="sovet text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
            </div>
          </div>
@@ -28,10 +28,10 @@
          <div class="swiper-slide">
            <div class="text-content text-white text-center">
             <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
-              {{ $t('title-home') }}
+              {{ text }}
              </h3>
              <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
-             <router-link to="" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
+             <router-link to="support" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
              <p class="sovet text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
            </div>
          </div>
@@ -46,9 +46,54 @@
  import Swiper from 'swiper';
  
  export default {
+  computed: {
+    translatedWord() {
+      // '$t' metodini import qilish orqali foydalaning
+      return this.$t('title-home');
+    },
+    updatedWords() {
+      let updated = [...this.words];
+      // Arrayning birinchi elementini yangilash
+      updated[0] = this.translatedWord;
+      return updated;
+    }
+  },
+    data() {
+      return {
+        wordIndex: 0,
+         charIndex: 0,
+         isDeleting: false,
+         words: ["" , ""],
+         text: '',
+      }
+    },
    components: {
      Swiper,
    },
+   watch: {
+    // Tarjima o'zgarganda updatedWords yangilanishi uchun
+    translatedWord() {
+      this.words = this.updatedWords;
+    }
+  },
+  methods: {
+      typeEffect() {
+         const currentWord = this.words[this.wordIndex];
+         const currentChar = currentWord.substring(0 , this.charIndex);
+         this.text = currentChar;
+   if(!this.isDeleting && this.charIndex < currentWord.length) {
+      this.charIndex++
+      setTimeout(this.typeEffect, 100);
+   } else if(this.isDeleting && this.charIndex > 0) {
+      this.charIndex--
+      setTimeout(this.typeEffect, 100);
+   } else {
+      this.isDeleting = !this.isDeleting
+      this.wordIndex = !this.isDeleting ? (this.wordIndex + 1) % this.words.length : this.wordIndex;
+      setTimeout(this.typeEffect , 200)
+   }
+      }
+   } ,
    mounted() {
      new Swiper('.hero-swiper', {
        autoplay: {
@@ -59,6 +104,9 @@
        effect: 'fade',
        // initialSlide: 0,
      });
+     this.typeEffect()
+     this.words = this.updatedWords;
+
    },
  }
  </script>
