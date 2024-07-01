@@ -1,4 +1,5 @@
 <template>
+  <MyNavbar class="bg-brand-blue" />
   <section class="support">
     <div class="container flex items-center justify-center flex-col w-full max-w-[846px]">
       <div class="btns w-full max-w-[846px]">
@@ -68,7 +69,7 @@
           <div class="form-row">
             <label for="phone">{{ $t('number-contact') }} <span class="text-red-500">*</span></label>
             <input type="text" id="phone" v-model="supportData.phoneNumber" @input="formatPhoneNumber" maxlength="17"
-            :class="{ 'error': !supportData.birthday && isEmpty }"/>
+            :class="{ 'error': !supportData.phoneNumber && isEmpty }"/>
             <p class="mt-2 text-red-500" v-if="supportData.phoneNumber > 4 && isEmpty">
              {{ $t('err-input') }}
             </p>
@@ -101,7 +102,7 @@
 </template>
 
 <script>
-
+import MyNavbar from '@/components/MyNavbar.vue';
 export default {
   data() {
     return {
@@ -121,6 +122,7 @@ export default {
      //  subjectRegEx: /^[a-zA-Z\s]+$/,
     }
   },
+  components: {MyNavbar},
   methods: {
      formatPhoneNumber() {
      let cleaned = this.supportData.phoneNumber.replace(/\D/g, '');
@@ -148,7 +150,7 @@ export default {
      this.supportData.phoneNumber = formatted;
    },
     async sendData() { 
-      if (!this.supportData.name.match(this.stringRegex) || !this.supportData.surname.match(this.stringRegex) || !this.supportData.sharifi.match(this.stringRegex) || !this.supportData.birthday || !this.supportData.numberClass || !this.supportData.enterClass || this.supportData.phoneNumber < 3) {
+      if (!this.supportData.name.match(this.stringRegex) || !this.supportData.surname.match(this.stringRegex) || !this.supportData.sharifi.match(this.stringRegex) || !this.supportData.birthday || !this.supportData.numberClass || this.supportData.numberClass > 11 || !this.supportData.enterClass || this.supportData.phoneNumber < 3) {
         this.isEmpty = true
       } else {
          console.log(this.supportData)

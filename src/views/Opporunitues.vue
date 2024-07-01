@@ -1,4 +1,5 @@
 <template>
+  <MyNavbar class="bg-brand-blue" />
   <section class="about-school my-10">
     <div class="container">
       <h2 class="s:text-center text-brand-blue text-[30px] text-start s:text-[35px] m:text-[50px] font-bold my-5">{{ $t('qulaylik') }}</h2>
@@ -33,6 +34,7 @@
 
 
 <script>
+import MyNavbar from '@/components/MyNavbar.vue'
 import appImg1 from '@/assets/images/brain-img1.jfif'
 import appImg2 from '@/assets/images/brain-img3.jfif'
 import appImg3 from '@/assets/images/brain-img2.jfif'
@@ -49,7 +51,8 @@ export default {
       appImg5,
       appImg6
     }
-  }
+  },
+  components: {MyNavbar},
 }
 </script>
 

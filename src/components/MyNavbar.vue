@@ -1,9 +1,9 @@
 <template>
-   <header class="head relative bg-brand-blue py-3 z-20">
+   <header class="head backdrop-blur-xl py-3">
       <div class="container flex items-center justify-between">
          <div class="logo flex items-center">
             <router-link to="/">
-               <img class="w-[70px] s:w-[100px]" src="../assets/images/kelajak-schoollogo.jpg" alt="">
+               <img class="w-[70px] s:w-[80px]" src="../assets/images/kelajak-schoollogo.jpg" alt="">
             </router-link>
          </div>
  
@@ -146,6 +146,14 @@
  </script>
  
  <style scoped>
+
+header {
+  position: sticky;
+  top: 0; 
+  left: 0;
+  z-index: 50;
+}
+
  .head .container .menu a.router-link-exact-active {
    color: #fff; 
    font-weight: 600;

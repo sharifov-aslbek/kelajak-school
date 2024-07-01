@@ -1,4 +1,5 @@
 <template>
+   <MyNavbar class="bg-brand-blue" />
    <section class="connect my-12">
       <div class="container flex flex-col gap-7">
         <h2 class="text-[24px] s:text-[30px] m:text-[45px] text-brand-blue font-bold">{{ $t('connect-title') }}</h2>
@@ -35,8 +36,9 @@
 </template>
 
 <script>
+import MyNavbar from '@/components/MyNavbar.vue';
 export default {
-   
+   components: {MyNavbar}
 }
 </script>
 

@@ -1,56 +1,60 @@
 <template>
-   <section class="hero">
-     <div class="hero-swiper swiper-container">
-       <div class="swiper-wrapper">
+  <section class="hero mb-[550px] lg:mb-[620px]">
+    <MyNavbar class="absolute z-10" />
+    <div class="hero-swiper swiper-container">
+      <div class="swiper-wrapper">
+        <!-- slide -->
+        <div class="swiper-slide">
+          <div class="text-content text-white text-center">
+            <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
+              {{ text }}
+            </h3>
+            <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
+            <router-link to="support" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
+            <p class="sovet text-[12px] w-[200px] mx-auto xs:w-auto mt-5"> {{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
+          </div>
+        </div>
+        <!-- slide -->
+        <div class="swiper-slide">
+          <div class="text-content text-white text-center">
+            <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
+              {{ text }}
+            </h3>
+            <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
+            <router-link to="support" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
+            <p class="sovet text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
+          </div>
+        </div>
          <!-- slide -->
          <div class="swiper-slide">
            <div class="text-content text-white text-center">
              <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
-               {{ text }}
-             </h3>
-             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
-             <router-link to="support" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
-             <p class="sovet text-[12px] w-[200px] mx-auto xs:w-auto mt-5"> {{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
-           </div>
-         </div>
-         <!-- slide -->
-         <div class="swiper-slide">
-           <div class="text-content text-white text-center">
-            <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
               {{ text }}
-             </h3>
-             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
-             <router-link to="support" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
-             <p class="sovet text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
-           </div>
-         </div>
-         <!-- slide -->
-         <div class="swiper-slide">
-           <div class="text-content text-white text-center">
-            <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
-              {{ text }}
-             </h3>
-             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
-             <router-link to="support" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
-             <p class="sovet text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
- </template>
+            </h3>
+            <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
+            <router-link to="support" class="border-2 text-[14px] sm:text-[20px] border-white p-2 rounded-lg">{{ $t('link-hero') }}</router-link>
+            <p class="sovet text-[12px] mt-5 w-[200px] mx-auto xs:w-auto">{{ $t('sovet-hero') }} <i class="fa-solid fa-arrow-up"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</template>
  
- <script>
+<script>
+  import MyNavbar from '@/components/MyNavbar.vue';
  import { register } from 'swiper/element/bundle';
  register();
  import Swiper from 'swiper';
  
  export default {
-  computed: {
-    translatedWord() {
-      // '$t' metodini import qilish orqali foydalaning
-      return this.$t('title-home');
-    },
+  components: {MyNavbar , Swiper},
+   computed: {
+     translatedWord() {
+       // '$t' metodini import qilish orqali foydalaning
+       return this.$t('title-home');
+      },
     updatedWords() {
       let updated = [...this.words];
       // Arrayning birinchi elementini yangilash
@@ -67,9 +71,7 @@
          text: '',
       }
     },
-   components: {
-     Swiper,
-   },
+
    watch: {
     // Tarjima o'zgarganda updatedWords yangilanishi uchun
     translatedWord() {
@@ -113,13 +115,18 @@
  
  <style scoped>
  
+ .hero {
+  position: relative;
+  /* z-index: 0; */
+ }
  .hero .swiper-container {
    overflow-x: hidden;
    display: flex;
    align-items: center;
-   /* position: absolute; */
+   position: absolute;
+   z-index: 1;
    top: 0;
-   left: 0;
+   /* left: 0; */
    /* z-index: -2 !important; */
    width: 100%;
  }
