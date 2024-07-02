@@ -23,7 +23,7 @@
          <h3 class="text-[20px] s:text-[25px] m:text-[30px] w-full max-w-[250px] xsmax:max-w-full text-brand-blue font-bold">{{ $t('email-addres') }}:</h3>
          <div class="inbox flex items-center gap-3">
             <i class="fa-solid fa-envelope"></i>
-            <p class="text-brand-blue text-[16px] xsmax:text-[20px]">aslbeksharifov@gmail.com</p>
+            <p class="text-brand-blue text-[16px] xsmax:text-[20px]">kelajak.school.qarshi@gmail.com</p>
          </div>
         </div>
 

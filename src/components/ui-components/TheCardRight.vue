@@ -1,5 +1,5 @@
 <template>
-   <div class="flex justify-around items-center flex-col gap-5 xr:gap-0 xr:flex-row">
+   <div class="flex justify-around items-center flex-col gap-5 xr:gap-0 xr:flex-row" v-motion-pop-visible>
       <div class="img order-2 xr:order-1">
          <img :src="img" alt="#" class="w-full max-w-[415px]">
       </div>

@@ -55,7 +55,3 @@ export default {
   components: {MyNavbar},
 }
 </script>
-
-<style>
-
-</style>

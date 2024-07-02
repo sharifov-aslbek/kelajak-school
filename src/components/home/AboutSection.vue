@@ -26,9 +26,7 @@ export default {
 </script>
 
 <style scoped>
-* {
-   /* overflow-x: hidden; */
-}
+
 
 .about .container .img-content img {
    animation: dropShadowAnimation 3s infinite;

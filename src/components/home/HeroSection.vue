@@ -1,5 +1,5 @@
 <template>
-  <section class="hero mb-[620px] lg:mb-[620px]">
+  <section class="hero mb-[700px] lg:mb-[620px]">
     <MyNavbar class="absolute z-10" />
     <div class="hero-swiper swiper-container">
       <div class="swiper-wrapper">
@@ -49,7 +49,7 @@
  import Swiper from 'swiper';
  
  export default {
-  components: {MyNavbar , Swiper},
+   components: {Swiper, MyNavbar},
    computed: {
      translatedWord() {
        // '$t' metodini import qilish orqali foydalaning
@@ -62,56 +62,56 @@
       return updated;
     }
   },
-    data() {
-      return {
-        wordIndex: 0,
-         charIndex: 0,
-         isDeleting: false,
-         words: ["" , ""],
-         text: '',
-      }
-    },
-
-   watch: {
+  data() {
+    return {
+      wordIndex: 0,
+      charIndex: 0,
+      isDeleting: false,
+      words: ["" , ""],
+      text: '',
+    }
+  },
+  
+  watch: {
     // Tarjima o'zgarganda updatedWords yangilanishi uchun
     translatedWord() {
       this.words = this.updatedWords;
     }
   },
   methods: {
-      typeEffect() {
-         const currentWord = this.words[this.wordIndex];
-         const currentChar = currentWord.substring(0 , this.charIndex);
-         this.text = currentChar;
-   if(!this.isDeleting && this.charIndex < currentWord.length) {
-      this.charIndex++
-      setTimeout(this.typeEffect, 100);
-   } else if(this.isDeleting && this.charIndex > 0) {
-      this.charIndex--
-      setTimeout(this.typeEffect, 100);
-   } else {
-      this.isDeleting = !this.isDeleting
-      this.wordIndex = !this.isDeleting ? (this.wordIndex + 1) % this.words.length : this.wordIndex;
-      setTimeout(this.typeEffect , 200)
-   }
+    typeEffect() {
+      const currentWord = this.words[this.wordIndex];
+      const currentChar = currentWord.substring(0 , this.charIndex);
+      this.text = currentChar;
+      if(!this.isDeleting && this.charIndex < currentWord.length) {
+        this.charIndex++
+        setTimeout(this.typeEffect, 100);
+      } else if(this.isDeleting && this.charIndex > 0) {
+        this.charIndex--
+        setTimeout(this.typeEffect, 100);
+      } else {
+        this.isDeleting = !this.isDeleting
+        this.wordIndex = !this.isDeleting ? (this.wordIndex + 1) % this.words.length : this.wordIndex;
+        setTimeout(this.typeEffect , 200)
       }
-   } ,
-   mounted() {
-     new Swiper('.hero-swiper', {
-       autoplay: {
-         delay: 2000,
-         disableOnInteraction: false,
-       },
-       slidesPerView: 1,
-       effect: 'fade',
-       // initialSlide: 0,
-     });
-     this.typeEffect()
-     this.words = this.updatedWords;
-
-   },
- }
- </script>
+    }
+  } ,
+  mounted() {
+    new Swiper('.hero-swiper', {
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 1,
+      effect: 'fade',
+      // initialSlide: 0,
+    });
+    this.typeEffect()
+    this.words = this.updatedWords;
+    
+  },
+}
+</script>
  
  <style scoped>
  

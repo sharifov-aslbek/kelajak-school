@@ -1,5 +1,5 @@
 <template>
-   <div class='flex justify-around items-center flex-col gap-5 xr:gap-0 xr:flex-row'>
+   <div class='flex justify-around items-center flex-col gap-5 xr:gap-0 xr:flex-row' v-motion-pop-visible>
       <div class="text">
          <h3 class="w-full max-w-[431px] font-semibold text-black text-[24px]  s:text-[32px] leading-10">{{ title }}</h3>
          <p class="w-full max-w-[430px] font-normal text-[16px] leading-6 mt-4">{{ subtitle }}</p>

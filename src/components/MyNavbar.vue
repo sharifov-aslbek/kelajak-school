@@ -24,10 +24,10 @@
             </a>
  
             <div class="dropdown">
-             <button @click="toggleDropdown" class="dropdown-toggle bg-blue-900 hover:bg-blue-700 flex items-center gap-2 px-2 text-white py-1">
+             <button @click="toggleDropdown" class="dropdown-toggle  hover:bg-white hover:text-brand-blue flex items-center gap-2 px-2 text-white py-1">
                 {{ currentLocale }} <i class="fa-solid fa-chevron-down text-[13px]"></i>
              </button>
-             <ul v-if="dropdownOpen" class="dropdown-menu bg-brand-blue">
+             <ul v-if="dropdownOpen" class="dropdown-menu">
              <li 
                 v-for="locale in $i18n.availableLocales" 
                 :key="`locale-${locale}`" 
