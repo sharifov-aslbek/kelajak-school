@@ -1,9 +1,16 @@
 <template>
-   <section class="advantage mt-[70px]">
+   <section class="advantage mt-[70px] px-[20px]">
       <div class="container text-center mcs:text-start">
-         <MotionGroup preset="slideVisibleLeft" :duration="1000">
-            <h2 class="text-[25px] w-full max-w-[350px] mx-auto sm:max-w-full sm:text-[40px] text-brand-blue">Nima uchun “Kelajak School” da o'qish kerak ?</h2>
-         </MotionGroup>
+         <div class="desktop hidden mcs:block">
+            <MotionGroup preset="slideVisibleLeft" :duration="1000">
+               <h2 class="text-[25px] w-full max-w-[350px] mx-auto sm:max-w-full sm:text-[40px] text-brand-blue">Nima uchun “Kelajak School” da o'qish kerak ?</h2>
+            </MotionGroup>
+         </div>
+         
+         <div class="mobile block mcs:hidden" v-motion-roll-visible-bottom>
+               <h2 class="text-[25px] w-full max-w-[350px] mx-auto sm:max-w-full sm:text-[40px] text-brand-blue">Nima uchun “Kelajak School” da o'qish kerak ?</h2>
+         </div>
+
          <div class="motions overflow-x-hidden hidden mcs:flex gap-[70px] mt-[30px]">
             <div class="motion-left">
                <MotionGroup preset="slideVisibleLeft" :duration="1000">
@@ -52,7 +59,7 @@
             
          </div>
 
-         <div class="motions-mobile overflow-x-hidden gap-[20px] flex flex-wrap items-center justify-center text-start">
+         <div class="motions-mobile mcs:hidden overflow-x-hidden gap-[20px] flex flex-wrap items-center justify-center text-start">
 
                   <div class="card w-full max-w-[400px] s:h-[200px] bg-gray-200 py-[20px] px-[30px] rounded-xl my-[20px]" v-motion-pop-visible>
                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><rect width="48" height="48" fill="#7CC069" rx="24"></rect><path fill="#fff" d="M34.974 22.771a1 1 0 0 0-.625-.707l-7.201-2.701 1.832-9.167a1 1 0 0 0-1.711-.875l-14 15a1 1 0 0 0 .375 1.625l7.204 2.701-1.828 9.157a1 1 0 0 0 1.711.875l14-15a1 1 0 0 0 .243-.908M21.67 34.75l1.309-6.547a1 1 0 0 0-.625-1.133l-6.605-2.481 10.578-11.333-1.308 6.548a1 1 0 0 0 .625 1.132l6.6 2.475z"></path></svg>
@@ -88,13 +95,37 @@
          
       </div>
    </section>
-   
 </template>
 
 <script>
+ import { ref } from 'vue';
+  // Import Swiper Vue.js components
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+  // Import Swiper styles
+  import 'swiper/css';
 
+  import 'swiper/css/pagination';
+  import 'swiper/css/navigation';
 export default {
-   
+   components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      const progressCircle = ref(null);
+      const progressContent = ref(null);
+      const onAutoplayTimeLeft = (s, time, progress) => {
+        progressCircle.value.style.setProperty('--progress', 1 - progress);
+        progressContent.value.textContent = `${Math.ceil(time / 1000)}s`;
+      };
+      return {
+        onAutoplayTimeLeft,
+        progressCircle,
+        progressContent,
+        modules: [Autoplay, Pagination, Navigation],
+      };
+    },
 }
 </script>
 
@@ -103,4 +134,76 @@ export default {
    overflow-y: hidden;
    overflow-x: hidden;
  }
+
+ #app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
 </style>

@@ -1,11 +1,11 @@
 <template>
-   <section class="about py-32 lg:py-16 px-8 lg:px-0 sm:mb-[150px]">
+   <section class="about py-32 lg:py-16 px-8 lg:px-0">
       <div class="container flex flex-col gap-10 lg:gap-0 lg:flex-row justify-around items-center">
-         <div class="img-content" v-motion-roll-visible-left>
+         <div class="img-content" v-motion-slide-visible-bottom>
             <img class="w-full max-w-[350px] lg:w-[400px]" src="@/assets/images/slide-img1.jpg" alt="#">
          </div>
 
-         <div class="text-content" v-motion-roll-visible-right>
+         <div class="text-content" v-motion-slide-visible-bottom>
             <h2 class="our text-blue-500  font-bold">{{ $t('our') }}</h2>
             <h2 class="w-full max-w-[400px] text-[18px] xs:text-[22px] my-5">{{ $t('about-slice') }} <span class="text-brand-blue font-bold text-[23px] xs:text-[27px]">Kelajak School</span> {{ $t('about-title') }}</h2>
             <p class="text-[#4e6fa0] font-semibold my-5">{{ $t('about-mentor') }}</p>
@@ -26,6 +26,10 @@ export default {
 </script>
 
 <style scoped>
+* {
+   /* overflow-x: hidden; */
+}
+
 .about .container .img-content img {
    animation: dropShadowAnimation 3s infinite;
    transition: filter 2s;

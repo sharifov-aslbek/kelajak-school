@@ -1,5 +1,5 @@
 <template>
-  <section class="hero mb-[550px] lg:mb-[620px]">
+  <section class="hero mb-[620px] lg:mb-[620px]">
     <MyNavbar class="absolute z-10" />
     <div class="hero-swiper swiper-container">
       <div class="swiper-wrapper">
