@@ -24,6 +24,11 @@ const router = createRouter({
       name: 'form',
       component: () => import('../views/AcceptanceView.vue')
     },
+    {
+      path: '/about-school',
+      name: 'maktab-haqida',
+      component: () => import('../views/About.vue')
+    }
   ]
 })
 

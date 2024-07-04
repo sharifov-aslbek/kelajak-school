@@ -1,5 +1,4 @@
 <template>
-  <MyNavbar class="bg-brand-blue" />
   <section class="about-school my-10">
     <div class="container">
       <h2 class="s:text-center text-brand-blue text-[30px] text-start s:text-[35px] m:text-[50px] font-bold my-5">{{ $t('qulaylik') }}</h2>

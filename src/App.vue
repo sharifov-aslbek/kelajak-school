@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <RouterView />
   <Footer />
   <TheTop />
@@ -6,12 +7,12 @@
 
 <script>
 import { RouterLink , RouterView } from 'vue-router';
-// import Navbar from '@/components/Navbar.vue'
+import Navbar from '@/components/MyNavbar.vue'
 import TheTop from '@/components/TheTop.vue'
 import Footer from '@/components/Footer.vue'
 export default {
   components: {
-   Footer , TheTop
+   Footer , TheTop , Navbar
   },
   data() {
     return {

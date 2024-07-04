@@ -1,5 +1,5 @@
 <template>
-   <header class="head backdrop-blur-xl py-3">
+   <header class="head bg-brand-blue py-3">
       <div class="container flex items-center justify-between">
          <div class="logo flex items-center">
             <router-link to="/">
@@ -10,7 +10,7 @@
          <div class="menu hidden items-center w-full max-w-[800px] justify-center gap-7 xc:gap-0 xc:justify-around text-gray-200 xc:flex">
             <router-link to="qulaylik" class="hover:font-bold">{{ $t('navbar-link') }}</router-link>
             <router-link to="connection" class="hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
-            <router-link to="" class="hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
+            <router-link to="about-school" class="hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
             <router-link to="support" class="hover:font-bold">{{ $t('link-hero') }}</router-link>
          </div>
  
@@ -27,12 +27,12 @@
              <button @click="toggleDropdown" class="dropdown-toggle  hover:bg-white hover:text-brand-blue flex items-center gap-2 px-2 text-white py-1">
                 {{ currentLocale }} <i class="fa-solid fa-chevron-down text-[13px]"></i>
              </button>
-             <ul v-if="dropdownOpen" class="dropdown-menu">
+             <ul v-if="dropdownOpen" class="dropdown-menu bg-white">
              <li 
                 v-for="locale in $i18n.availableLocales" 
                 :key="`locale-${locale}`" 
                 @click="changeLocale(locale)" 
-                class="dropdown-item cursor-pointer hover:bg-blue-800 text-white py-1"
+                class="dropdown-item cursor-pointer hover:bg-blue-800 hover:text-white text-black py-1"
              >
                 {{ locale }}
              </li>
@@ -72,7 +72,7 @@
             <ul class="menu-mini flex flex-col justify-start items-start gap-6 pt-10">
                <router-link to="qulaylik" class="text-blue-800 hover:font-bold">{{ $t('navbar-link') }}</router-link>
                <router-link to="connection" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-2') }}</router-link>
-               <router-link to="" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
+               <router-link to="about-school" class="text-blue-800 hover:font-bold">{{ $t('navbar-link-3') }}</router-link>
                <router-link to="support" class="text-blue-800 hover:font-bold">{{ $t('link-hero') }}</router-link>
             </ul>
 
@@ -146,14 +146,12 @@
  </script>
  
  <style scoped>
-
-header {
-  position: sticky;
-  top: 0; 
-  left: 0;
-  z-index: 50;
-}
-
+ .for-bg {
+   z-index: 1000;
+ }
+   .mobile-menu {
+      z-index: 1000;
+   }
  .head .container .menu a.router-link-exact-active {
    color: #fff; 
    font-weight: 600;

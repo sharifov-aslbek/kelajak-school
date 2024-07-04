@@ -1,5 +1,4 @@
 <template>
-  <MyNavbar class="bg-brand-blue" />
   <section class="support">
     <div class="container flex items-center justify-center flex-col w-full max-w-[846px]">
       <div class="btns w-full max-w-[846px]">
@@ -102,7 +101,6 @@
 </template>
 
 <script>
-import MyNavbar from '@/components/MyNavbar.vue';
 export default {
   data() {
     return {
@@ -122,7 +120,6 @@ export default {
      //  subjectRegEx: /^[a-zA-Z\s]+$/,
     }
   },
-  components: {MyNavbar},
   methods: {
      formatPhoneNumber() {
      let cleaned = this.supportData.phoneNumber.replace(/\D/g, '');
@@ -168,7 +165,7 @@ export default {
       const timeFormat = dataTime.getHours() + ':' + dataTime.getMinutes().toString().padStart(2, '0')
       const format = dataTime.getDate() + '.' + dataTime.getMonth() + '.' + dataTime.getFullYear()
       const message =
-        `**Qabul uchun yozilgan o'quvchi ma'lumotlari:**\nIsmi: **${this.supportData.name}**\nFamilyasi: **${this.supportData.surname}**\nSharifi: **${this.supportData.sharifi}**\nTug'ilgan yil / oy / kun: **${this.supportData.birthday}**\nQaysi sinfda o'qimoqchi: **${this.supportData.numberClass}**\nQanaqa sinfda o'qimoqchi: **${this.supportData.enterClass}**\nXabari: **${this.supportData.message}**\nJo'natilgan kun 🕐: **${format}**\nJo'natilgan vaqt: **${timeFormat}`;
+        `**Qabul uchun yozilgan o'quvchi ma'lumotlari:**\nIsmi: **${this.supportData.name}**\nFamilyasi: **${this.supportData.surname}\nSharifi: **${this.supportData.sharifi}**\nRaqami: **${this.supportData.phoneNumber}**\nTug'ilgan yil / oy / kun: **${this.supportData.birthday}**\nQaysi sinfda o'qimoqchi: **${this.supportData.numberClass}**\nQanaqa sinfda o'qimoqchi: **${this.supportData.enterClass}**\nXabari: **${this.supportData.message}**\nJo'natilgan kun 🕐: **${format}**\nJo'natilgan vaqt: **${timeFormat}`;
       const url = `https://api.telegram.org/bot${token}/sendMessage`;
       try {
         const response = await fetch(url, {
