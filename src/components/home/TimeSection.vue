@@ -28,8 +28,8 @@
          
    
          <div class="rightBlock text-center l:text-start" v-motion-slide-visible-bottom>
-            <h2 class="text-[30px] sm:text-[40px] text-brand-blue font-semibold">Vaqt bu - Eng oliy ne'mat</h2>
-            <p class="text-[#088395] my-5">Kelajak School bilan uni to'gri yo'lga sarflang</p>
+            <h2 class="text-[30px] sm:text-[40px] text-brand-blue font-semibold">{{ $t('vaqt') }}</h2>
+            <p class="text-[#088395] my-5"></p>
             <button class="border-2 border-[#37B7C3] hover:bg-[#37B7C3] hover:text-white text-[14px] py-2 px-5">{{ $t('link-hero') }}</button>
          </div>
       </section>
