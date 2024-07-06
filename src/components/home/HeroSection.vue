@@ -7,7 +7,7 @@
          <!-- slide -->
          <div class="swiper-slide">
            <div class="text-content text-white text-center">
-             <h3 class="uptitle text-[17px] xs:text-xl lg:text-2xl">
+             <h3 class="uptitle text-[13px] font-bold xs:text-[20px] lg:text-2xl">
               {{ text }}
             </h3>
             <h1 class="title text-xl s:text-3xl sm:text-5xl lg:text-6xl mt-3 mb-14 w-[75%] mx-auto">{{ $t('subtitle-home') }}</h1>
@@ -113,7 +113,7 @@
 
 
  .swiper-wrapper .swiper-slide {
-   height: 100vh;
+   height: 90vh;
    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
      url('@/assets/images/2.jfif') no-repeat top / cover;
  }
