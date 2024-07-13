@@ -2,9 +2,6 @@
   <section class="hero">
     <div class="hero-swiper swiper-container">
       <div class="swiper-wrapper">
-
-      
-         <!-- slide -->
          <div class="swiper-slide">
            <div class="text-content text-white text-center">
              <h3 class="uptitle text-[13px] font-bold xs:text-[20px] lg:text-2xl">
@@ -21,72 +18,57 @@
 
 </template>
  
-<script>
- export default {
-   computed: {
-     translatedWord() {
-       // '$t' metodini import qilish orqali foydalaning
-       return this.$t('title-home');
-      },
-    updatedWords() {
-      let updated = [...this.words];
-      // Arrayning birinchi elementini yangilash
-      updated[0] = this.translatedWord;
-      return updated;
-    }
-  },
-  data() {
-    return {
-      wordIndex: 0,
-      charIndex: 0,
-      isDeleting: false,
-      words: ["" , ""],
-      text: '',
-    }
-  },
-  
-  watch: {
-    // Tarjima o'zgarganda updatedWords yangilanishi uchun
-    translatedWord() {
-      this.words = this.updatedWords;
-    }
-  },
-  methods: {
-    typeEffect() {
-      const currentWord = this.words[this.wordIndex];
-      const currentChar = currentWord.substring(0 , this.charIndex);
-      this.text = currentChar;
-      if(!this.isDeleting && this.charIndex < currentWord.length) {
-        this.charIndex++
-        setTimeout(this.typeEffect, 100);
-      } else if(this.isDeleting && this.charIndex > 0) {
-        this.charIndex--
-        setTimeout(this.typeEffect, 100);
-      } else {
-        this.isDeleting = !this.isDeleting
-        this.wordIndex = !this.isDeleting ? (this.wordIndex + 1) % this.words.length : this.wordIndex;
-        setTimeout(this.typeEffect , 200)
-      }
-    }
-  } ,
-  mounted() {
-    // new Swiper('.hero-swiper', {
-    //   autoplay: {
-    //     delay: 2000,
-    //     disableOnInteraction: false,
-    //   },
-    //   slidesPerView: 1,
-    //   effect: 'fade',
-    //   // initialSlide: 0,
-    // });
-    this.typeEffect()
-    this.words = this.updatedWords;
-    
-  },
-}
+<script setup>
+import { ref, computed, watch, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+const wordIndex = ref(0);
+const charIndex = ref(0);
+const isDeleting = ref(false);
+const words = ref(["", ""]);
+const text = ref('');
+
+const translatedWord = computed(() => {
+  return t('title-home');
+});
+
+const updatedWords = computed(() => {
+  const updated = [...words.value];
+  updated[0] = translatedWord.value;
+  return updated;
+});
+
+watch(translatedWord, () => {
+  words.value = updatedWords.value;
+});
+
+const typeEffect = () => {
+  const currentWord = words.value[wordIndex.value];
+  const currentChar = currentWord.substring(0, charIndex.value);
+  text.value = currentChar;
+
+  if (!isDeleting.value && charIndex.value < currentWord.length) {
+    charIndex.value++;
+    setTimeout(typeEffect, 100);
+  } else if (isDeleting.value && charIndex.value > 0) {
+    charIndex.value--;
+    setTimeout(typeEffect, 100);
+  } else {
+    isDeleting.value = !isDeleting.value;
+    wordIndex.value = !isDeleting.value ? (wordIndex.value + 1) % words.value.length : wordIndex.value;
+    setTimeout(typeEffect, 200);
+  }
+};
+
+onMounted(() => {
+  words.value = updatedWords.value;
+  typeEffect();
+});
 </script>
- 
- <style scoped>
+
+
+<style scoped>
  
  .hero .swiper-container {
    overflow-x: hidden;

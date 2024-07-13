@@ -98,54 +98,56 @@
    </header>
  </template>
  
- <script>
- export default {
-   data() {
-      return {
-         isMenuOpen: false,
-         dropdownOpen: false,
-         dropMenu: false,
-      }
-   },
-   computed: {
-     currentLocale() {
-       return this.$i18n.locale;
-     }
-   },
-   methods: {
-      toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
-    toggleDropdown() {
-       this.dropdownOpen = !this.dropdownOpen;
-    },
-    toggleDropdownMenu() {
-       this.dropMenu = !this.dropMenu;
-    },
-     changeLocale(locale) {
-       this.$i18n.locale = locale;
-       this.dropdownOpen = false;  // Close the dropdown after selecting an option
-     },
-     changeLocaleMenu(locale) {
-       this.$i18n.locale = locale
-       this.dropMenu = false
-     },
-    checkWindowWidth() {
-      window.addEventListener("resize", () => {
-        let windowWidth = window.innerWidth
-        if (windowWidth > 640) {
-          this.isMenuOpen = false
-        }
-      })
-    }
-   },
-   mounted() {
-      this.checkWindowWidth()
-   },
- }
- </script>
+
+ <script setup>
+ import { ref, computed, onMounted } from 'vue';
+ import { useI18n } from 'vue-i18n';
  
- <style scoped>
+ const isMenuOpen = ref(false);
+ const dropdownOpen = ref(false);
+ const dropMenu = ref(false);
+ 
+ const { locale } = useI18n();
+ const currentLocale = computed(() => locale.value);
+ 
+ const toggleMenu = () => {
+   isMenuOpen.value = !isMenuOpen.value;
+ };
+ 
+ const toggleDropdown = () => {
+   dropdownOpen.value = !dropdownOpen.value;
+ };
+ 
+ const toggleDropdownMenu = () => {
+   dropMenu.value = !dropMenu.value;
+ };
+ 
+ const changeLocale = (newLocale) => {
+   locale.value = newLocale;
+   dropdownOpen.value = false;
+ };
+ 
+ const changeLocaleMenu = (newLocale) => {
+   locale.value = newLocale;
+   dropMenu.value = false;
+ };
+ 
+ const checkWindowWidth = () => {
+   window.addEventListener('resize', () => {
+     let windowWidth = window.innerWidth;
+     if (windowWidth > 640) {
+       isMenuOpen.value = false;
+     }
+   });
+ };
+ 
+ onMounted(() => {
+   checkWindowWidth();
+ });
+ </script>
+
+
+<style scoped>
  .for-bg {
    z-index: 1000;
  }

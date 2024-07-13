@@ -36,40 +36,35 @@
       </div>
    
 </template>
-
-
-<script>
-export default {
-   data() {
-      return {
-       hour: '',
-       minute: '',
-       second: '',
-      }
-   },
-   methods: {
-      timeRunning() {
-         setInterval(() => {
-        const d = new Date();
-        const hr = d.getHours();
-        const min = d.getMinutes();
-        const sec = d.getSeconds();
-        const hr_rotation = 30 * hr + min / 2;
-        const min_rotation = 6 * min;
-         const  sec_rotation = 6 * sec;
-   
-   this.hour = hr_rotation
-   this.minute = min_rotation
-   this.second = sec_rotation
-}, 1000);
-      }
-   },
-   mounted() {
-      this.timeRunning()
-   },
-}
-</script>
-
+ 
+ <script setup>
+ import { ref, onMounted } from 'vue';
+ 
+ const hour = ref('');
+ const minute = ref('');
+ const second = ref('');
+ 
+ const timeRunning = () => {
+   setInterval(() => {
+     const d = new Date();
+     const hr = d.getHours();
+     const min = d.getMinutes();
+     const sec = d.getSeconds();
+     const hr_rotation = 30 * hr + min / 2;
+     const min_rotation = 6 * min;
+     const sec_rotation = 6 * sec;
+ 
+     hour.value = hr_rotation;
+     minute.value = min_rotation;
+     second.value = sec_rotation;
+   }, 1000);
+ };
+ 
+ onMounted(() => {
+   timeRunning();
+ });
+ </script>
+ 
 <style>
 
 #clock {

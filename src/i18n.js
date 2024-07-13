@@ -15,6 +15,7 @@ function loadLocalMessages() {
 
 export default createI18n({
    locale: 'UZ',
+   legacy: false, 
    fallbackLocale: 'UZ',
    messages: loadLocalMessages()
 })
