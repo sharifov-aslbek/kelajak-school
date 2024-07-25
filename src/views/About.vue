@@ -82,7 +82,28 @@
                         <p class="text-[17px] font-semibold w-full max-w-[650px]">{{ $t('sportzal-subtitle') }}</p>
                      </div>
                   </div>
+               
+                  <div class="content-sport flex flex-col lg:flex-row gap-[20px] lg:justify-between lg:items-center" v-motion-pop-visible>
+                     <div class="text order-2 lg:order-1">
+                        <h4 class="text-[#0065ad] font-bold text-[25px] mb-[15px]">Sinflarimiz ko'rinishi</h4>
+                        <p class="text-[17px] font-semibold w-full max-w-[650px]">Sinfda barcha sharoitlar mavjud va farzandingiz o'qishi uchun qulayliklar yaratilgan</p>
+   
+                     </div>
+
+                     <img class="order-1 lg:order-2 rounded-3xl w-full max-w-[500px]" src="@/assets/images/sinfxona-2.jpg" alt="#">
+                  </div>
+
+                  <div class="flex" v-motion-pop-visible>
+                     <img class="order-1 lg:order-2 rounded-3xl w-full max-w-[500px]" src="@/assets/images/sinfxona.jpg" alt="#">
+                  </div>
+                  <div class="flex justify-end" v-motion-pop-visible>
+                     <img class="order-1 lg:order-2 rounded-3xl w-full max-w-[500px]" src="@/assets/images/sinfxona-3.jpg" alt="#">
+                  </div>
+
+                  
                </div>
+               
+
 
 
                <div class="xizmatlar mb-[20px] flex flex-col gap-[30px] bg-white w-full max-w-full rounded-3xl mt-[20px] p-[20px]">
