@@ -94,7 +94,7 @@
                   </div>
 
                   <div class="flex" v-motion-pop-visible>
-                     <img class="order-1 lg:order-2 rounded-3xl w-full max-w-[500px]" src="@/assets/images/sinfxona.jpg" alt="#">
+                     <img class="order-1 lg:order-2 rounded-3xl w-full max-w-[500px]" src="@/assets/images/sinfxona-school.jpg" alt="#">
                   </div>
                   <div class="flex justify-end" v-motion-pop-visible>
                      <img class="order-1 lg:order-2 rounded-3xl w-full max-w-[500px]" src="@/assets/images/sinfxona-3.jpg" alt="#">
