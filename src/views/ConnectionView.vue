@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
    <section class="connect my-12">
       <div class="container flex flex-col gap-7"  v-motion-fade-visible>
          <div class="top-titles flex items-center gap-5">
@@ -157,4 +157,42 @@ export default {
 }
 
 
-</style>
+</style> -->
+
+
+<template>
+  <div class="min-h-screen bg-gray-100 py-48 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+      <div class="md:flex">
+        <div class=" md:flex-shrink-0">
+          <img class="h-48 w-full object-cover md:w-48" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxoa88TyhQMp2-PVWvUxlXVlzP2_agy-2skdYB3UiqxPZuNwr29wJ3yDYPcS4fVcOSxoU&usqp=CAU" alt="Contact" />
+        </div>
+        <div class="p-8">
+          <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Contact Us</div>
+          <p class="mt-2 text-gray-500">{{ $t('connect-title') }}</p>
+          <!-- <h1 class="block mt-1 text-lg leading-tight font-medium text-black">Get in Touch</h1>
+           -->
+          <div class="mt-4">
+            <h2 class="text-md font-semibold text-gray-700">Phone</h2>
+            <div class="flex gap-2">
+              <img class="mt-1 h-8" src="https://i.pinimg.com/564x/15/17/f8/1517f8381d7d16a5ed622a8c0909df97.jpg" alt="Phone Number" />
+          <p class="mt-2 text-gray-500">+998 91 463 33 22
+          </p>
+            </div>
+          </div>
+          
+          <div class="mt-4">
+            <h2 class="text-md font-semibold text-gray-700">Email</h2>
+            <a href="mailto:contact@example.com" class="text-indigo-500 hover:text-indigo-600 transition duration-150 ease-in-out">
+              kelajak.school.qarshi@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+// No additional script needed for this component
+</script>
