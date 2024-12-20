@@ -72,7 +72,7 @@
   import { ref, onMounted, onUnmounted } from 'vue'
   import { PlayIcon, PauseIcon, VolumeXIcon, Volume2Icon, MaximizeIcon } from 'lucide-vue-next'
   
-  const videoSrc = 'src/assets/video.mp4'
+  const videoSrc = 'src/assets/video-mini.mp4'
   const videoPlayer = ref(null)
   const isPlaying = ref(true)
   const isMuted = ref(true)
