@@ -28,6 +28,11 @@ const router = createRouter({
       path: '/about-school',
       name: 'maktab-haqida',
       component: () => import('../views/About.vue')
+    },
+    {
+      path: '/video',
+      name: 'test-video',
+      component: () => import('../views/Video.vue')
     }
   ]
 })
