@@ -35,17 +35,17 @@
     {
       id: 1,
       name: 'English',
-      videoUrl: '/assets/vd.MP4', // Replace with actual video URL
+      videoUrl: '/vd.MP4', // Replace with actual video URL
     },
     {
       id: 2,
       name: 'Football',
-      videoUrl: '/assets/vd2.MP4', // Replace with actual video URL
+      videoUrl: '/vd2.MP4', // Replace with actual video URL
     },
     {
       id: 3,
       name: 'Iqtisodiyot',
-      videoUrl: '/assets/vd3.MP4', // Replace with actual video URL
+      videoUrl: '/vd3.MP4', // Replace with actual video URL
     },
   ];
   </script>
