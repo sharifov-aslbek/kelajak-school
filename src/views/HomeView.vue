@@ -1,6 +1,7 @@
 <template>
 <HeroSection />
 <AboutSection />
+<Video />
 <AdvantageSection />
 <TimeSection />
 <LocationSection />
@@ -12,8 +13,9 @@ import AboutSection from '@/components/home/AboutSection.vue'
 import LocationSection from '@/components/home/LocationSection.vue'
 import AdvantageSection from '@/components/home/AdvantageSection.vue'
 import TimeSection from '@/components/home/TimeSection.vue'
+import Video from '@/components/home/Video.vue'
 export default {
-   components: {HeroSection , AboutSection , LocationSection , AdvantageSection , TimeSection}
+   components: {HeroSection , AboutSection , LocationSection , AdvantageSection , TimeSection , Video}
 }
 </script>
 

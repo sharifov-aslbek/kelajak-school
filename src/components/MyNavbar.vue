@@ -37,7 +37,11 @@
                 {{ locale }}
              </li>
              </ul>
-          </div>
+
+            </div>
+            <a href="/login" class="flex rounded-lg items-center gap-2">
+             Login <UserIcon width="20"/>
+            </a>
  
          </div>
  
@@ -102,6 +106,7 @@
  <script setup>
  import { ref, computed, onMounted } from 'vue';
  import { useI18n } from 'vue-i18n';
+ import { UserIcon } from 'lucide-vue-next';
  
  const isMenuOpen = ref(false);
  const dropdownOpen = ref(false);
