@@ -42,11 +42,11 @@
           <h2 class="text-4xl md:text-5xl font-bold mb-4">{{ $t('title-home') }}</h2>
           <p class="text-lg md:text-xl mb-8">{{ $t('subtitle-home') }}</p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <RouterLink to="/support" class="px-6 py-3 bg-white text-gray-900 font-medium rounded-md hover:bg-gray-100 transition-colors">
+            <a href="https://online-qabulga-yozilish.netlify.app/" class="px-6 py-3 bg-white text-gray-900 font-medium rounded-md hover:bg-gray-100 transition-colors">
               {{ $t('link-hero') }}
-            </RouterLink>
+            </a>
             <RouterLink to="/about-school" class="px-6 py-3 border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors">
-              {{ $t('read') }}
+              {{ $t('navbar-link-3') }}
             </RouterLink>
           </div>
         </div>

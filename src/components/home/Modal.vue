@@ -70,10 +70,10 @@
   
               <!-- Button -->
               <div class="flex justify-start">
-                <RouterLink to="/support" class="bg-white text-gray-800 px-5 py-2 rounded-lg font-medium">
+                <a href="https://online-qabulga-yozilish.netlify.app/" class="bg-white text-gray-800 px-5 py-2 rounded-lg font-medium">
           {{ $t('link-hero') }}
                   
-                </RouterLink>
+                </a>
               </div>
   
               <!-- JS logo -->

@@ -19,9 +19,9 @@
       
       <!-- Button -->
       <div class="flex items-center space-x-4">
-        <RouterLink to="/support" class="bg-white text-gray-800 px-3 py-1 md:px-4 md:py-2 rounded text-sm font-medium hover:bg-gray-100 transition-colors">
+        <a href="https://online-qabulga-yozilish.netlify.app/" class="bg-white text-gray-800 px-3 py-1 md:px-4 md:py-2 rounded text-sm font-medium hover:bg-gray-100 transition-colors">
           {{ $t('link-hero') }}
-        </RouterLink>
+        </a>
         
         <!-- Right side icons -->
         <div class="relative w-10 h-10 md:w-12 md:h-12 ml-2 hidden md:block">

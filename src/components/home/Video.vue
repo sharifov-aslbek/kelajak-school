@@ -61,6 +61,21 @@
       id: 6,
       name: 'Speaking',
       videoUrl: '/vd6.mp4'
+    },
+    {
+      id: 7 ,
+      name: 'Alisher Navoiy tavvaludi uchun Bayram tadbirlar',
+      videoUrl: '/vd7.mp4'
+    },
+    {
+      id: 8,
+      name: "Zavqli o'yinlar",
+      videoUrl: '/vd8.MOV'
+    },
+    {
+      id: 9,
+      name: "Ingliz tili",
+      videoUrl: '/vd9.mp4'
     }
   ];
   </script>
