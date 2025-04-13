@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Banner class="hidden sm:flex" />
     <Navbar v-if="!hideNavbar" />
     <RouterView />
     <Footer v-if="!hideNavbar" />
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import Banner from '@/components/home/Banner.vue';
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 import Navbar from '@/components/MyNavbar.vue';
@@ -18,7 +20,8 @@ export default {
   components: {
     Footer,
     TheTop,
-    Navbar
+    Navbar,
+    Banner
   },
   setup() {
     const route = useRoute();

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 my-24">
-          <div v-for="person in people" :key="person.id" class="relative rounded-2xl overflow-hidden shadow-lg">
+          <div v-motion-slide-visible-bottom v-for="person in people" :key="person.id" class="relative rounded-2xl overflow-hidden shadow-lg">
             <!-- Video element that autoplays -->
             <video 
               class="w-full h-[400px] object-cover"
@@ -44,9 +44,24 @@
     },
     {
       id: 3,
-      name: 'Iqtisodiyot',
-      videoUrl: '/vd3.MP4', // Replace with actual video URL
+      name: 'Zakovat',
+      videoUrl: '/vd3.mp4', // Replace with actual video URL
     },
+    {
+      id: 4,
+      name: 'Matematika',
+      videoUrl: '/vd4.mp4'
+    },
+    {
+      id: 5,
+      name: 'Darsdan lavhalar',
+      videoUrl: '/vd5.mp4'
+    },
+    {
+      id: 6,
+      name: 'Speaking',
+      videoUrl: '/vd6.mp4'
+    }
   ];
   </script>
   

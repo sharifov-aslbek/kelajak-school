@@ -15,6 +15,11 @@ const router = createRouter({
       component: () => import('../views/Opporunitues.vue')
     },
     {
+      path: '/darslar',
+      name: 'darslar',
+      component: () => import('../views/Darslar.vue')
+    },
+    {
       path: '/connection',
       name: 'aloqa',
       component: () => import('../views/ConnectionView.vue')

@@ -13,13 +13,12 @@
               fontSize: `${Math.random() * 20 + 10}px`
             }"
           >
-            🌸
           </div>
         </div>
         
         <!-- Your content goes here -->
         <div class="relative z-10">
-          <section class="hero">
+          <!-- <section class="hero">
         <div class="hero-swiper swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -34,7 +33,25 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
+
+      <section class="new-hero relative h-[87vh] py-7 s:h-[90vh]">
+      <div class="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-900/50 z-0"></div>
+      <div class="container mx-auto px-4 h-full flex items-center relative z-1">
+        <div class="max-w-2xl text-white">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">{{ $t('title-home') }}</h2>
+          <p class="text-lg md:text-xl mb-8">{{ $t('subtitle-home') }}</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <RouterLink to="/support" class="px-6 py-3 bg-white text-gray-900 font-medium rounded-md hover:bg-gray-100 transition-colors">
+              {{ $t('link-hero') }}
+            </RouterLink>
+            <RouterLink to="/about-school" class="px-6 py-3 border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors">
+              {{ $t('read') }}
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+    </section>
         </div>
       </div>
     </template>
@@ -42,6 +59,7 @@
     <script setup>
     import { ref, computed, watch, onMounted } from 'vue';
     import { useI18n } from 'vue-i18n';
+// import { RouterLink } from 'vue-router';
 
     const { t } = useI18n();
     const wordIndex = ref(0);
@@ -135,4 +153,14 @@
         url('@/assets/images/2.jfif') no-repeat top / cover;
     }
 
+    .new-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('https://i.pinimg.com/736x/4f/98/d7/4f98d7895a2a35ef5930d4f6e36107e0.jpg') no-repeat top / cover;
+    }
+
+    /* desktop */
+    /* https://i.pinimg.com/736x/4f/98/d7/4f98d7895a2a35ef5930d4f6e36107e0.jpg */
+
+    /* mobile */
+    /* https://i.pinimg.com/736x/51/7e/66/517e666dae665db64c9a5dd67b5379d9.jpg */
     </style>
