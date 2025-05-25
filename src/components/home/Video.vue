@@ -76,7 +76,22 @@
       id: 9,
       name: "Ingliz tili",
       videoUrl: '/vd9.mp4'
-    }
+    },
+    {
+      id: 10,
+      name: "Dars jarayoni",
+      videoUrl: '/vd10.MOV'
+    },
+    {
+      id: 11,
+      name: "Dars jarayoni",
+      videoUrl: '/vd11.MOV'
+    },
+    {
+      id: 12,
+      name: "Dars jarayoni",
+      videoUrl: '/vd12.MOV'
+    },
   ];
   </script>
   
